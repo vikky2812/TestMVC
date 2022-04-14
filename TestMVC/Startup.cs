@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TestMVC.Data;
+
 
 namespace TestMVC
 {
@@ -26,8 +26,8 @@ namespace TestMVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<MydatabaseContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("SQLConnectionStr")));
+            //services.AddDbContext<MydatabaseContext>(options =>
+            //options.UseSqlServer(Configuration.GetConnectionString("SQLConnectionStr")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

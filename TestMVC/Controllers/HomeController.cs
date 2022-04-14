@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using TestMVC.Data;
+
 using TestMVC.Models;
 
 namespace TestMVC.Controllers
@@ -13,20 +13,18 @@ namespace TestMVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private MydatabaseContext context;
 
 
-        public HomeController(ILogger<HomeController> logger, MydatabaseContext mydatabaseContext)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            context = mydatabaseContext;
         }
 
         public IActionResult Index()
         {
-            List<Course> lst = new List<Course>();
-           lst =  context.Course.ToList();
-            return View(lst);
+           // List<Course> lst = new List<Course>();
+           //lst =  context.Course.ToList();
+            return View();
         }
 
         public IActionResult Privacy()
